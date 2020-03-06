@@ -94,6 +94,14 @@ class Server:
                 temp_message = "this command take in one arguemnt, the name of the channel you would like to join\n"
                 current_client.socket.sendall(temp_message.encode())
 
+        # INSTRUCTIONS for a client to see list of commands
+        elif "$i" == message[0]:
+            print("These are the commands a client can use:", "\t", "Create a channel: $c name_of_channel")
+            print("Join a channel: $j name_of_channel", "\t", "Delete a channel: $d channel_to_delete")
+            print("Personal Message: $p name_of_client msg_to_send", "\t", "Exit a channel: $e name_of_channel")			
+            print("Group Message: $m name_of_channel msg_to_send","\t", "List all available channels: $lu")
+            print("Join a channel: $j name_of_channel", "\t", "List the available channels: $lr")
+
         #CREATE [ARG1 channel TO CREATE]
         elif "$c" == message[0]:
             if len(message) == 2:
