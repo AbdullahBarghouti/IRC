@@ -166,7 +166,7 @@ class Server:
                         temp_message = "ERROR. No channel with that name\n"
                         current_client.socket.sendall(temp_message.encode())
             else:
-                temp_message = "this command take in one arguemnt, the name of the channel you would like to send a message to\n"
+                temp_message = "this command take in two arguemnts, the name of the channel you would like to send a message to and the message\n"
                 current_client.socket.sendall(temp_message.encode())
 
         #PERSONAL MESSAGE [ARG1 USERNAME] [ARG2 THE MESSAGE YOU WANT TO SEND]
@@ -184,7 +184,7 @@ class Server:
                     temp_message = "That user doesn't exist\n"
                     current_client.socket.sendall(temp_message.encode())
             else:
-                temp_message = "You're missing something in your message: $pmsg <user name> message\n"
+                temp_message = "this command take in two arguemnts, the name of the user you would like to send a message to and the message\n"
                 current_client.socket.sendall(temp_message.encode())
         
         #LIST 

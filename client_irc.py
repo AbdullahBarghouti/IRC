@@ -4,7 +4,7 @@
 import socket, sys, select
 import supp
 
-# defaults are localhost and port 12345
+
 host_name = socket.gethostname()
 host_port = 12345
 MESSAGE_SIZE = 1024
