@@ -186,10 +186,10 @@ class Server:
             else:
                 temp_message = "this command take in two arguemnts, the name of the user you would like to send a message to and the message\n"
                 current_client.socket.sendall(temp_message.encode())
-        
+
+        #display all the channels currently available for the server
         #LIST 
-        elif "$l" == message[0]:
-                #display all the channels currently available for the server
+        elif "$lr" == message[0]:
                 #if there arent any to list
                 if len(self.channel_list) == 0:
                     message = "sorry. no channels exist"
@@ -203,7 +203,7 @@ class Server:
 
         #display the list of users that are currently conntect to the server
         #AVAILABLE 
-        elif "$a" == message[0]:
+        elif "$lu" == message[0]:
             #users in this channel
             if len(message) == 1:
                 temp_message = "users in this channel: "
